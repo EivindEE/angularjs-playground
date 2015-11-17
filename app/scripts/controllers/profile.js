@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name yoApp.controller:MainCtrl
+ * @name yoApp.controller:ProfileCtrl
  * @description
- * # MainCtrl
+ * # ProfileCtrl
  * Controller of the yoApp
  */
 angular.module('yoApp')
-	.controller('MainCtrl', function () {
+  .controller('ProfileCtrl', function () {
 
-	});
+  });
