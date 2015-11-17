@@ -9,5 +9,4 @@
  */
 angular.module('yoApp')
 	.controller('MainCtrl', function () {
-
 	});

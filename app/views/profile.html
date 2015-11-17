@@ -1,21 +1,25 @@
 <p>Please give us your contact details.</p>
-<form>
+<form ng-submit="save()">
 	<div class="form-group">
 		<label for="username">Username</label>
-		<input type="text" class="form-control" id="username" placeholder="Your username">
+		<input ng-model="user.name" type="text" class="form-control" id="username" placeholder="Your username" value="user.name">
 	</div>
 	<div class="form-group">
 		<label for="email">Email address</label>
-		<input type="email" class="form-control" id="email" placeholder="name@example.org">
+		<input ng-model="user.email" type="email" class="form-control" id="email" placeholder="name@example.org">
 	</div>
 	<div class="form-group">
 		<label for="telephone">Telephone number</label>
-		<input type="number" class="form-control" id="tlf" placeholder="22334422">
+		<input ng-model="user.tlf" type="number" class="form-control" id="tlf" placeholder="22334422">
+	</div>
+	<div class="form-group">
+		<label for="address">Address</label>
+		<input ng-model="user.address" type="text" class="form-control" id="address" placeholder="Paper Road 123">
 	</div>
 	<div class="checkbox">
 		<label>
-			<input type="checkbox"> Allow us to send you unsolicited emails
+			<input ng-model="user.allowsMail" type="checkbox" checked="checked"> Allow us to send you unsolicited emails
 		</label>
 	</div>
-	<button type="submit" class="btn btn-default">Submit</button>
+	<button type="submit" class="btn btn-default" >Submit</button>
 </form>
