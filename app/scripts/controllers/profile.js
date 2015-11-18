@@ -9,7 +9,8 @@
  */
 angular.module('yoApp')
 	.controller('ProfileCtrl', function ($scope, localStorageService) {
-		$scope.user = localStorageService.get('user') || {};
+		var storageName = 'user';
+		$scope.user = localStorageService.get(storageName) || {};
 		$scope.save = function () {
 			var user = {
 				'name' : $scope.user.name,
@@ -18,6 +19,6 @@ angular.module('yoApp')
 				'address': $scope.user.address,
 				'allowsMail': $scope.user.allowsMail
 			};
-			localStorageService.set('user', user);
+			localStorageService.set(storageName, user);
 		};
 	});

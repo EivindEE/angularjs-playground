@@ -1,0 +1,30 @@
+<p>Please add your billing information</p>
+<form name="billingForm" ng-submit="save()">
+	<div class="form-group">
+		<label for="username">Username</label>
+		<input ng-model="billingInformation.name" type="text" class="form-control" id="username" placeholder="Your username" value="billingInformation.name">
+	</div>
+
+	<div class="form-group">
+		<label for="number">Credit card number</label>
+		<input type="text"
+			id="cardNumber"
+			ng-model="billingInformation.cardNumber"
+			class="form-control"
+			cc-format="true"
+			name="cardNumber"
+			cc-number
+			cc-type="billingInformation.cardType"
+			placeholder="4012 8888 8888 1881"/>
+		<p ng-show="billingForm.cardNumber.$error.ccNumberType && billingInformation.cardType">That's not a valid {{billingInformation.cardType}}</p>
+	</div>
+	<div class="form-group">
+		<label for="number">Credit card type</label> </br>
+		<select id="cardType"
+				ng-model="billingInformation.cardType"
+				ng-options="type for type in ['Visa', 'American Express', 'MasterCard']"
+				class="form-control"></select>
+	</div>
+
+	<button type="submit" class="btn btn-default" >Save</button>
+</form>

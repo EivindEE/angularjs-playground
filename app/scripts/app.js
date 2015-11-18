@@ -16,7 +16,9 @@ angular
 		'ngRoute',
 		'ngSanitize',
 		'ngTouch',
-		'LocalStorageModule'
+		'LocalStorageModule',
+		'credit-cards'
+
 	])
 	.config(function ($routeProvider) {
 		$routeProvider
@@ -29,6 +31,11 @@ angular
 				templateUrl: 'views/profile.html',
 				controller: 'ProfileCtrl',
 				controllerAs: 'profile'
+			})
+			.when('/billing', {
+				templateUrl: 'views/billing.html',
+				controller: 'BillingCtrl',
+				controllerAs: 'billing'
 			})
 			.otherwise({
 				redirectTo: '/'
