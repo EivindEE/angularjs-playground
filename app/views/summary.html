@@ -1,0 +1,10 @@
+<h1>Thank you for your order {{user.name}}!</h1>
+<p>Please go over your details one last time to ensure that all the information is up to date<p>
+
+<p>You wanted to order {{lessonStore.numberOflessons}} {{lessonStore.instrument.name}} lessons
+for a total cost of {{totalCost(lessonStore.numberOfLessons, lessonStore.instrument.price)}}</p>
+
+<p>You can be reached at {{user.tlf}}, {{user.email}} or {{user.address}}</p>
+
+<p>Your {{billingStore.cardType}} card has the card number {{billingStore.cardNumber}}
+and the name on the card is {{billingStore.name}}.<p>
