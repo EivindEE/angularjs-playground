@@ -22,4 +22,8 @@ Running `grunt test` will run the unit tests with karma.
 
 ## References
 
-You can find the code and documentation for the credit card validation library [here](https://github.com/bendrucker/angular-credit-cards).
+'You can find the code and documentation for the credit card validation library [here](https://github.com/bendrucker/angular-credit-cards).
+
+## Gotchas
+
+Make sure your scope variables are named differently that your controllers. For example: Don't use the name $scope.lessons in the lessons controller. Doing so disrupts some angular internall magic.
