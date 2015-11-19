@@ -1,10 +1,36 @@
-<h1>Thank you for your order {{user.name}}!</h1>
-<p>Please go over your details one last time to ensure that all the information is up to date<p>
+<div ng-if="allDataPresent()">
+	<h1>Thank you for your order {{user.name}}!</h1>
+	<p>Please go over your details one last time to ensure that all the information is up to date<p>
 
-<p>You wanted to order {{lessonStore.numberOflessons}} {{lessonStore.instrument.name}} lessons
-for a total cost of {{totalCost(lessonStore.numberOfLessons, lessonStore.instrument.price)}}</p>
+	<p>You wanted to order {{lessonStore.numberOflessons}} {{lessonStore.instrument.name}} lessons
+	for a total cost of {{totalCost(lessonStore.numberOfLessons, lessonStore.instrument.price)}}</p>
 
-<p>You can be reached at {{user.tlf}}, {{user.email}} or {{user.address}}</p>
+	<p>You can be reached at {{user.tlf}}, {{user.email}} or {{user.address}}</p>
 
-<p>Your {{billingStore.cardType}} card has the card number {{billingStore.cardNumber}}
-and the name on the card is {{billingStore.name}}.<p>
+	<p>Your {{billingStore.cardType}} card has the card number {{billingStore.cardNumber}}
+	and the name on the card is {{billingStore.name}}.<p>
+</div>
+
+<div ng-if="!allDataPresent()">
+	<h2>Please go back and ensure that you have filled inn all the fields before checking out.</h2>
+
+	<h3 ng-if="!lessonDataPresent()">Unfilled lesson order</h3>
+	<ul>
+		<li ng-repeat="missing in missingLessonFields()">{{missing}}</li>
+	</ul>
+
+	<div ng-if="!userDataPresent()">
+	<h3>Unfilled profile fields</h3>
+	<ul>
+		<li ng-repeat="missing in missingUserFields()">{{missing}}</li>
+	</ul>
+
+	<h3 ng-if="!billingDataPresent()">Unfilled billing information fields</h3>
+	<ul>
+		<li ng-repeat="missing in missingBillingFields()">{{missing}}</li>
+	</ul>
+
+
+</div>
+
+
