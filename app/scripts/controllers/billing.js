@@ -10,8 +10,8 @@
 angular.module('yoApp')
 	.controller('BillingCtrl', function ($scope, localStorageService) {
 		var storageName = 'billing';
-		$scope.billingInformation = localStorageService.get(storageName) || {};
-		console.log($scope.billingInformation);
+
+
 		$scope.save = function () {
 			var billing = {
 				'name' : $scope.billingInformation.name,
@@ -20,4 +20,6 @@ angular.module('yoApp')
 			};
 			localStorageService.set(storageName, billing);
 		};
+
+				$scope.billingInformation = localStorageService.get(storageName) || {};
 });

@@ -1,0 +1,28 @@
+<p>This is the lessons view.</p>
+
+
+<form ng-submit="save()">
+
+	<div class="form-group">
+		<label for="instrument">Select instrument</label>
+		<br />
+		<span ng-repeat="(index, instrument) in instruments">
+			<input
+				ng-model="lessonStore.instrument"
+				type="radio"
+				value="{{instrument}}"
+			>
+			<label>I want to learn to play {{instrument.name}}! Price {{instrument.price}} NOK</label>
+			<br />
+		</span>
+	</div>
+
+	<div class="form-group">
+		<label for="numberOflessons">Select number of lessons</label> </br>
+		<select id="numberOfLessons"
+				ng-model="lessonStore.numberOfLessons"
+				ng-options="number for number in ['0', '1', '2', '3', '4']"
+				class="form-control"></select>
+	</div>
+	<button type="submit" class="btn btn-default" >Save</button>
+</form>

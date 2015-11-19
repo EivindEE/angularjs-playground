@@ -37,6 +37,11 @@ angular
 				controller: 'BillingCtrl',
 				controllerAs: 'billing'
 			})
+			.when('/lessons', {
+				templateUrl: 'views/lessons.html',
+				controller: 'LessonsCtrl',
+				controllerAs: 'lessons'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
